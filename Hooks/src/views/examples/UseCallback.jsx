@@ -6,7 +6,7 @@ const UseCallback = props => {
     <div className="UseCallback">
       <PageTitle
         title="Hook UseCallback"
-        subtitle="Retorna uma função memoizada!"
+        subtitle="Retorna uma função memorizada!"
       />
     </div>
   )
