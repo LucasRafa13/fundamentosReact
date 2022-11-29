@@ -2,7 +2,7 @@ import React from "react"
 
 export const data = {
   number: 123,
-  text: "Context API + Hooks"
+  text: "Context API Simples"
 }
 
 const DataContext = React.createContext(null)
