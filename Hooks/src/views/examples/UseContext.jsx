@@ -6,6 +6,13 @@ import DataContext from "../../data/DataContext"
 const UseContext = props => {
   const context = React.useContext(DataContext)
 
+  function addNumber(delta) {
+    context.setState({
+      ...context.state,
+      number: context.state.number + delta
+    })
+  }
+
   return (
     <div className="UseContext">
       <PageTitle
@@ -13,8 +20,17 @@ const UseContext = props => {
         subtitle="Aceita um objeto de contexto e retorna o valor atual do contexto!"
       />
       <div className="center">
-        <span className="text">{context.text}</span>
-        <span className="text">{context.number}</span>
+        <span className="text">{context.state.text}</span>
+        <span className="text">{context.state.number}</span>
+
+        <div>
+          <button className="btn" onClick={() => addNumber(-1)}>
+            -1
+          </button>
+          <button className="btn" onClick={() => addNumber(1)}>
+            +1
+          </button>
+        </div>
       </div>
     </div>
   )
