@@ -14,22 +14,31 @@ const UseEffect = props => {
   const [number, setNumber] = useState(1)
   const [fatorial, setFatorial] = useState(1)
 
-  useEffect(() => {
-    setFatorial(calcFatorial(number))
-  }, [number])
+  useEffect(
+    function () {
+      setFatorial(calcFatorial(number))
+    },
+    [number]
+  )
 
-  useEffect(() => {
-    if (fatorial > 1000000) {
-      document.title = "Eita!!!"
-    }
-  }, [fatorial])
+  useEffect(
+    function () {
+      if (fatorial > 1000000) {
+        document.title = "Eita!!!"
+      }
+    },
+    [fatorial]
+  )
 
   // Ex #02
   const [status, setStatus] = useState("Ímpar")
 
-  useEffect(() => {
-    setStatus(number % 2 === 0 ? "Par" : "Ímpar")
-  }, [number])
+  useEffect(
+    function () {
+      setStatus(number % 2 === 0 ? "Par" : "Ímpar")
+    },
+    [number]
+  )
 
   return (
     <div className="UseEffect">

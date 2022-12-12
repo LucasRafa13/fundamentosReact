@@ -10,8 +10,9 @@ const UseState = props => {
     <div className="UseState">
       <PageTitle
         title="Hook UseState"
-        subtitle={`Estado em componentes funcionais! + ${name}`}
+        subtitle="Estado em componentes funcionais!"
       />
+
       <SectionTitle title="Exercício #01" />
       <div className="center">
         <span className="text">{count}</span>
@@ -24,12 +25,13 @@ const UseState = props => {
           </button>
           <button
             className="btn"
-            onClick={() => setCount(value => value + 1000)}
+            onClick={() => setCount(currect => currect + 1000)}
           >
-            1000
+            +1000
           </button>
         </div>
       </div>
+
       <SectionTitle title="Exercício #02" />
       <input
         type="text"
@@ -37,6 +39,7 @@ const UseState = props => {
         value={name}
         onChange={e => setName(e.target.value)}
       />
+      <span className="text">{name}</span>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import PageTitle from "../../components/layout/PageTitle"
 
 function sum(a, b) {
   const future = Date.now() + 2000
-  while (Date.now() < future) {} // delay 2s
+  while (Date.now() < future) {} // espera... 2s
   return a + b
 }
 
@@ -16,7 +16,7 @@ const UseMemo = props => {
 
   return (
     <div className="UseMemo">
-      <PageTitle title="Hook UseMemo" subtitle="Retorna um valor memorizado!" />
+      <PageTitle title="Hook UseMemo" subtitle="Retorna um valor memoizado!" />
 
       <div className="center">
         <input
@@ -35,7 +35,7 @@ const UseMemo = props => {
           type="number"
           className="input"
           value={n3}
-          // onChange={e => setN3(parseInt(e.target.value))}
+          onChange={e => setN3(parseInt(e.target.value))}
         />
         <span className="text">{result}</span>
       </div>

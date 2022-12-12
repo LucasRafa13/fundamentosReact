@@ -14,15 +14,21 @@ const UseRef = props => {
   const myInput1 = useRef(null)
   const myInput2 = useRef(null)
 
-  useEffect(() => {
-    count.current++
-    myInput2.current.focus()
-  }, [value1])
+  useEffect(
+    function () {
+      count.current = count.current + 1
+      myInput2.current.focus()
+    },
+    [value1]
+  )
 
-  useEffect(() => {
-    count.current++
-    myInput1.current.focus()
-  }, [value2])
+  useEffect(
+    function () {
+      count.current++
+      myInput1.current.focus()
+    },
+    [value2]
+  )
 
   return (
     <div className="UseRef">
@@ -30,10 +36,11 @@ const UseRef = props => {
         title="Hook UseRef"
         subtitle="Retorna um objeto mutável com a propriedade .current!"
       />
+
       <SectionTitle title="Exercício #01" />
       <div className="center">
         <div>
-          <span className="text">Valor:</span>
+          <span className="text">Valor: </span>
           <span className="text">{merge(value1, value2)} [</span>
           <span className="text red">{count.current}</span>
           <span className="text">]</span>
@@ -41,8 +48,8 @@ const UseRef = props => {
 
         <input
           type="text"
-          ref={myInput1}
           className="input"
+          ref={myInput1}
           value={value1}
           onChange={e => setValue1(e.target.value)}
         />

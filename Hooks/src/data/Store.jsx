@@ -1,14 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 
-const InitialState = {
+const initialState = {
   number: 1234,
   text: "Context API + Hooks"
 }
 
-export const AppContext = React.createContext(InitialState)
+export const AppContext = React.createContext(initialState)
 
 const Store = props => {
-  const [state, setState] = React.useState(InitialState)
+  const [state, setState] = useState(initialState)
 
   function updateState(key, value) {
     setState({
